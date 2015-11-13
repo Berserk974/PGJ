@@ -56,7 +56,7 @@ public class life : MonoBehaviour
 		safe = true;
 	}
 
-	void HitWithDamages (int i)
+	public void HitWithDamages (int i)
 	{
 		hp -= i;
 	}
