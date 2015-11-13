@@ -7,7 +7,7 @@ public class life : MonoBehaviour
 	public int hpMax;
 	public int regenHp;   //nombres de hp regeneré a chaque ticks
 	public float regenHpTick;   //nombre de seconde avant de recevoir le prochain soin
-	public int nbHpLostByWater; //nombre d'HP perdu par tick (eau)
+	public int nbHpLostByWater; //nombre d'HP perdu par contact avec l'eau
 	public float loseHpTick;    //nombre de seconde avant la prochaine perte d'HP
 
 
@@ -127,11 +127,11 @@ public class life : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		if (col.gameObject.name == "feu") {
+		if (col.gameObject.tag=="water") {
 			WaterDamage ();
 		}
 
-		if (col.gameObject.name == "eau") {
+		if (col.gameObject.tag=="fire") {
 			FireContact ();
 		}
 
